@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/font/Vazir-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/font/Vazir-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/font/Vazir.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/font/Vazir-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/font/Vazir-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Vazir", sans-serif;
+}
+
+/* ---------- استایل برای کارت آکاردئونی ---------- */
+details .arrow-icon {
+  transition: transform 0.5s ease;
+}
+
+details[open] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+details > div {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease, opacity 0.7s ease;
+}
+
+details[open] > div {
+  max-height: 500px; /* مقدار مناسب برای حالت باز */
+  opacity: 1;
+}
